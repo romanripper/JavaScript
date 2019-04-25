@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script type="text/javascript" src="6d.js"></script>
+
+    <style>
+    
+    body{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+    form{ 
+        max-width: 380px;
+        display: grid;
+        grid-template: repeat(3, 30px) / 1fr 1fr 50px;
+        grid-template-areas: 
+        "fullNameLabelArea fullNameArea buttonArea"
+        "emailLabelArea emailArea buttonArea"
+        "telNumberLabelArea telNumberArea buttonArea";
+        column-gap: 5px;
+        row-gap: 5px;
+    }
+    table{
+        width: 400px;
+        text-align: center;
+    }
+
+    table, th, td{
+       border-style: solid;
+       border-width: 1px;
+       border-collapse: collapse;
+    }
+
+    form>*,
+    table{
+        font-size: 18px;
+    }
+    #fullNameLabel{
+        grid-area: fullNameLabelArea;
+    }
+    #fullName{
+        grid-area: fullNameArea;
+    }
+    #emailLabel{
+        grid-area: emailLabelArea;
+    }
+    #email{
+        grid-area: emailArea; 
+    }
+
+    #telNumberLabel{
+        grid-area: telNumberLabelArea;
+    }
+
+    #telNumber{
+        grid-area: telNumberArea;
+    }
+    #submitButton{
+        grid-area: buttonArea;
+        width: 80px;
+        grid-row: 2;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>Provide your full name, e-mail and telephone number</h1>
+    <form name="mainForm">
+        <label for="fullName" id="fullNameLabel">Full name: </label>
+        <input type="text" id="fullName">
+        <label for="email" id="emailLabel"> E-mail: </label>
+        <input type="text" id="email">
+        <label for="telNumber" id="telNumberLabel"> Tel.number: </label>
+        <input type="text" id="telNumber">
+        <input type="button" id="submitButton" onclick="addData()" value='Add'>
+    </form>
+    <table id="table">
+        <tr>
+            <th>Full name</th>
+            <th>E-mail</th>
+            <th>Tel.number</th>
+        </tr>
+    </table>
+</body>
+
+</html>

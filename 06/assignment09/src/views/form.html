@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+
+    body{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+    form{ 
+        max-width: 300px;
+        display: grid;
+        grid-template: repeat(4, 30px) / 120px 1fr 1fr;
+        grid-template-areas: 
+        "num1LabelArea num1Area num1Area"
+        "num2LabelArea num2Area num2Area" 
+        "operationsLabelArea operationsArea buttonArea"
+        "resultLabel result result";
+        column-gap: 5px;
+        row-gap: 5px;
+    }
+
+    form>*{
+        font-size: 18px;
+    }
+    #num1Label{
+        grid-area: num1LabelArea;
+    }
+    #num1{
+        grid-area: num1Area;
+    }
+    #num2Label{
+        grid-area: num2LabelArea;
+    }
+    #num2{
+        grid-area: num2Area; 
+    }
+
+    #operationsLabel{
+        grid-area: operationsLabelArea;
+    }
+    
+    #operations{
+        grid-area: operationsArea;
+        width: 60px;
+    }
+    
+    #submitButton{
+        grid-area: buttonArea;
+    }
+
+    #result, #resultLabel{
+        color: rgb(46, 127, 248);
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 24px;
+    }
+    #resultLabel{
+        grid-area: resultLabel;
+        color: rgb(46, 127, 248);
+        visibility: hidden;
+    }
+
+    #result{
+        grid-area: result;
+    }
+    </style>
+    <title>Calculator</title>
+    <script type="text/javascript" src="/assignment09/src/public/myAjax.js"></script>
+</head>
+
+<body>
+        <h1>Calculator</h1>
+    <form name="mainForm">
+
+        <label for="num1" id="num1Label">First number:</label>
+        <input type="text" id="num1" name="num1" required>
+
+        <label for="num2" id="num2Label">Second number:</label>
+        <input type="text" id="num2" name="num" required>
+
+        <label for="operations" id="operationsLabel"> Operation: </label>
+        <select id="operations">
+            <option value="add">+</option>
+            <option value="subtract">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">/</option>
+        </select>
+
+        <input type="button" id="submitButton" onclick="calc()" value='Calculate'>
+
+        <label for="result" id="resultLabel">Result:</label>
+        <div id="result"></div>
+    </form>
+
+</body>
+
+</html>

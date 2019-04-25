@@ -1,0 +1,22 @@
+{
+    "id": "s66666",
+    "fullName": "Vlad Dracula",
+    "grades": [
+        {
+            "name": "PRI",
+            "grade": "4.5"
+        },
+        {
+            "name": "NAI",
+            "grade": "5"
+        },
+        {
+            "name": "APBD",
+            "grade": "4.5"
+        },
+        {
+            "name": "TPO",
+            "grade": "4.5"
+        }
+    ]
+}

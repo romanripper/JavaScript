@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Converters</title>
+
+    <style>
+
+        body{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    }
+
+    form{
+    max-width: 200px;
+    display: grid;
+    grid-template: repeat(3, 30px) / 1fr;
+    grid-template-areas: "inputFieldArea scalesArea" "buttonArea buttonArea" "answerArea answerArea";
+    column-gap: 5px;
+    row-gap: 5px;
+    }
+
+    form>*{
+    font-size: 18px;
+    }
+
+    .toConvert{
+    grid-area: inputFieldArea;
+    width: 200px;
+    }
+
+    .scales{
+    grid-area: scalesArea;
+    width: 55px;
+    }
+    
+    .submitButton{
+    grid-area: buttonArea;
+    width: 50%;
+    }
+
+    .answer{
+    grid-area: answerArea;
+    }
+    </style>
+    
+    <script type="text/javascript" src="./bundle.js"> </script>
+</head>
+
+<body>
+    <h1>Celsius, Fahrenheit and Kelvin Converter</h1>
+    <form>
+        <input type="text" class="toConvert" id="temp">
+        <select class="scales" id="tempOptions">
+            <option value="celsius">°C</option>
+            <option value="fahrenheit">°F</option>
+            <option value="kelvin">°K</option>
+        </select>
+        <input type="button" class="submitButton" id="tempButton" value='Convert'>
+        <p class="answer" id="tempAnswer"></p>
+    </form>
+
+    <h1>Kilometers and Miles Converter</h1>
+    <form>
+        <input type="text" class="toConvert" id="dist">
+        <select class="scales" id="distOptions">
+            <option value="kilometers">km</option>
+            <option value="miles">m</option>
+        </select>
+        <input type="button" class="submitButton" id="distButton" value='Convert'>
+        <p class="answer" id="distAnswer"></p>
+    </form>
+
+</body>
+
+</html>

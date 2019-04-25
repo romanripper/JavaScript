@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script type="text/javascript" src="6a.js"></script>
+
+    <style>
+    body{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+    form{ 
+        max-width: 200px;
+        display: grid;
+        grid-template: repeat(3, 30px) / 1fr;
+        grid-template-areas: "inputFieldArea scalesArea" "buttonArea buttonArea" "answerArea answerArea";
+        column-gap: 5px;
+        row-gap: 5px;
+    }
+    form>*{
+        font-size: 18px;
+    }
+
+    #degrees{
+        grid-area: inputFieldArea;
+        width: 200px;
+    }
+
+    #scales{
+        grid-area: scalesArea;
+        width: 55px;
+    }
+    #submitButton{
+        grid-area: buttonArea;
+        width: 50%;
+    }
+
+    #answer{
+        grid-area: answerArea;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>Celsius and Fahrenheit Converter</h1>
+    <form name="mainForm">
+        <input type="text" id="degrees">
+        <select id="scales">
+            <option value="Celsius">°C</option>
+            <option value="Fahrenheit">°F</option>
+        </select>
+        <input type="button" id="submitButton" onclick="convert()" value='Convert'>
+        <p id="answer"></p>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script type="text/javascript" src="6c.js"></script>
+
+    <style>
+        body{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+    form{ 
+        max-width: 300px;
+        display: grid;
+        grid-template: repeat(3, 30px) / 1fr;
+        grid-template-areas: "emailLabelArea emailArea" "telNumberLabelArea telNumberArea" "buttonArea buttonArea";
+        column-gap: 5px;
+        row-gap: 5px;
+    }
+    form>*{
+        font-size: 18px;
+    }
+
+    #email{
+        grid-area: emailArea;
+        width: 200px;
+    }
+    #emailLabel{
+        grid-area: emailLabelArea;
+    }
+
+    #telNumberLabel{
+        grid-area: telNumberLabelArea;
+    }
+
+    #telNumber{
+        grid-area: telNumberArea;
+        width: 200px;
+    }
+
+    #submitButton{
+        grid-area: buttonArea;
+        width: 50%;
+    }
+
+    </style>
+</head>
+
+<body>
+    <h1>Provide your e-mail and telephone number for validation</h1>
+    <form name="mainForm">
+        <label id="emailLabel"> E-mail: </label>
+        <input type="text" id="email">
+        <label id="telNumberLabel"> Tel.number: </label>
+        <input type="text" id="telNumber">
+        <input type="button" id="submitButton" onclick="validate()" value='Validate'>
+    </form>
+</body>
+
+</html>

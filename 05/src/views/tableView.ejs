@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Personal data</title>
+    <style>
+        body {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+        }
+
+        table {
+            width: 400px;
+            text-align: center;
+        }
+
+        table,
+        th,
+        td {
+            border-style: solid;
+            border-width: 1px;
+            border-collapse: collapse;
+        }
+
+        table {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <% if(person) { %>
+        <h1>Contact information<h1>
+        <table id="table">
+            <tr>
+                <th>Full name</th>
+                <th>E-mail</th>
+                <th>Tel.number</th>
+            </tr>
+            <tr>
+                <td>
+                    <%= person.fullName%>
+                </td>
+                <td>
+                    <%= person.email%>
+                </td>
+                <td>
+                    <%= person.number%>
+                </td>
+            </tr>
+        </table>
+    <%} else if(student){%>
+        <h1><%= student.fullName %>(<%= student.id %>) results<h1>
+        <table id="table">
+            <tr>
+                <th>Subject</th>
+                <th>Grade</th>
+            </tr>
+            <% student.grades.forEach((grade) =>{%>
+                <tr>
+                    <td>
+                        <%= grade.name%>
+                    </td>
+                    <td>
+                        <%= grade.grade%>
+                    </td>
+                </tr>
+            <%});%>
+        </table>
+    <%} else {%>
+        <h1>Error occured</h1>
+    <%}%>    
+</body>
+
+</html>
